@@ -8,8 +8,9 @@ import sys
 current_dir = os.path.dirname(os.path.abspath(__file__))
 data_path = os.path.join(current_dir, "../notebooks/insurance_data.csv")
 
-# Load the dataset
-data = pd.read_csv(data_path)
+
+# Adjust the delimiter based on the file format (e.g., ',' for CSV, '\t' for tab-separated)
+data = pd.read_csv(data_path, delimiter='|') # Change ',' to '\t' if tab-separated
 
 # Data Cleaning (Handle missing values)
 data.dropna(subset=['Province', 'PostalCode', 'Gender', 'StatutoryRiskType', 'Premium', 'Total_Claim'], inplace=True)
