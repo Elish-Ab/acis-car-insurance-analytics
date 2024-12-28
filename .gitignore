@@ -1,5 +1,5 @@
 venv
-
-dvc_env
-notebooks/*.csv
+/notebooks/*.csv
+/scripts/MachineLearningRating_v3.txt
+dvc_env/
 
