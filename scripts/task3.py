@@ -5,8 +5,8 @@ import os
 import sys
 
 data_path = "MachineLearningRating_v3.txt"
-# Adjust the delimiter based on the file format (e.g., ',' for CSV, '\t' for tab-separated)
-data = pd.read_csv(data_path, delimiter='|') # Change ',' to '\t' if tab-separated
+
+data = pd.read_csv(data_path, delimiter='|') 
 
 # Check for required columns
 required_columns = ['Province', 'PostalCode', 'Gender', 'StatutoryRiskType', 'Premium', 'Total_Claim']
