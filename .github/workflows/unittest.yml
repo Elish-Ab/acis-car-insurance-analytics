@@ -22,10 +22,10 @@ jobs:
         with:
           python-version: '3.13.1'  # or '3.14.0-alpha.3'
 
-      - name: Install Dependencies
+      - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          pip install pytest
 
       - name: Run Tests
         run: |
