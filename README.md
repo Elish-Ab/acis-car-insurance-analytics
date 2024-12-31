@@ -9,11 +9,12 @@ The project is divided into the following key components:
 - **Data Cleaning and Preprocessing**: Cleaning and preparing the insurance data for analysis.
 - **A/B Hypothesis Testing**: Statistical tests to evaluate hypotheses about risk and profit margin differences.
 - **Segmentation**: Dividing the data into control and test groups for analysis.
+- **Statistical Modeling**: Diving into the model evaluation.
   
 ### Files
 
 - **scripts/task3.py**: Contains the implementation of A/B hypothesis testing for the project.
-- **notebooks/insurance_data.csv**: The historical insurance data used for analysis (Feb 2014 - Aug 2015).
+- **notebooks/insurance_data.csv**: The historical insurance data used for analysis (Feb 2014 - Aug 2015), Statisitical_modeling.ipynb: which evaluates different models.
 - **requirements.txt**: A list of dependencies for running the project.
 
 ## Requirements
