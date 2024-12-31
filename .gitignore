@@ -1,2 +1,5 @@
 venv
 /notebooks/*.csv
+/scripts/MachineLearningRating_v3.txt
+dvc_env/
+

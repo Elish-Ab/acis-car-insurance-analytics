@@ -1,14 +1,21 @@
 import pandas as pd
 import numpy as np
-from scipy.stats import ttest_ind
+from scipy.stats import chi2_contingency, ttest_ind
+import os
+import sys
 
-# data_path = "../notebooks/insurance_data.txt"
 data_path = "MachineLearningRating_v3.txt"
 
+data = pd.read_csv(data_path, delimiter='|') 
 
-data = pd.read_csv(data_path, sep='|')
+# Check for required columns
+required_columns = ['Province', 'PostalCode', 'Gender', 'StatutoryRiskType', 'Premium', 'Total_Claim']
+missing_columns = [col for col in required_columns if col not in data.columns]
 
-print(data.columns)
+if missing_columns:
+    print(f"Warning: Missing columns in the dataset: {missing_columns}")
+
+
 # Function to calculate Claims Ratio
 def calculate_claims_ratio(df):
     """Calculate the claims ratio: TotalClaims / TotalPremium"""
@@ -45,6 +52,7 @@ def test_risk_across_provinces(data):
         print("Reject Null Hypothesis: Significant risk differences across provinces.")
     else:
         print("Fail to Reject Null Hypothesis: No significant risk differences across provinces.")
+
 
 # Function to test risk differences between zip codes
 def test_risk_across_zip_codes(data):
