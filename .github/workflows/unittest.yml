@@ -1,32 +1,22 @@
-name: CI/CD Pipeline
+name: CI
 
-on:
-  push:
-    branches:
-      - master
-      
-  pull_request:
-    branches:
-      - master
+on: [push, pull_request]
 
 jobs:
-  setup-and-test:
-    runs-on: ubuntu-latest
-
+  build:
+    runs-on: ubuntu-22.04
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
-
-      - name: Setup Python
-        uses: actions/setup-python@v4
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v4
         with:
-          python-version: '3.13.1'  # or '3.14.0-alpha.3'
-
+          python-version: '3.13.1'
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install pytest
-
-      - name: Run Tests
-        run: |
-          pytest -v tests/
+      - name: List test files
+        run: ls tests/
+      - name: Check test discovery
+        run: pytest --collect-only tests/
+      - name: Run pytest
+        run: pytest -v tests/
